@@ -25,9 +25,9 @@ public class StateAndReward {
 
 	/* Reward function for the full hover controller */
 	public static double getRewardHover(double angle, double vx, double vy) {	
-		double reward_angle = discretize(Math.abs(angle), 50, 0, 1);	
+		double rew_angle = discretize(Math.abs(angle), 50, 0, 1);	
 		double rewardHover_vy = discretize(Math.abs(vy), 50, 0, 5);		
-		double reward = 100 - reward_angle - rewardHover_vy;
+		double reward = 100 - rew_angle - rewardHover_vy;
 		return reward;
 		
 		
