@@ -76,7 +76,7 @@ public class QLearningController extends Controller {
 
 	
 	/* Turn off all rockets */
-	void resetRockets() {
+	void TurnOff() {
 		leftEngine.setBursting(false);
 		rightEngine.setBursting(false);
 		middleEngine.setBursting(false);
@@ -84,8 +84,8 @@ public class QLearningController extends Controller {
 
 	/* Performs the chosen action */
 	void performAction(int action) {		
-		this.resetRockets();
-		/* Fire zeh rockets! */
+		this.TurnOff();
+		
 		switch(action) {
 			case(1):
 				this.leftEngine.setBursting(true);
@@ -247,7 +247,7 @@ public class QLearningController extends Controller {
 	
 	public void pause() {
 		paused = true;
-		resetRockets();
+		TurnOff();
 	}
 
 	public void run() {
