@@ -43,8 +43,21 @@ public class TutorialController extends Controller {
     	System.out.println("vx: " + this.vx.getValue());
     	System.out.println("vy: " + this.vy.getValue());
     	System.out.println("angle: " + this.angle.getValue());
+    	if (vy.getValue() > -5) {
+    		middleRocket.setBursting(true);
+    	}
+    	else {
+    		middleRocket.setBursting(false);
+    	}
     	
-    	this.middleRocket.setBursting(this.vy.getValue() > 0);
+		if (angle.getValue() > 0) {
+			rightRocket.setBursting(true);
+			leftRocket.setBursting(false);
+		}
+		else {
+			rightRocket.setBursting(false);
+			leftRocket.setBursting(true);
+		}
     
     }
 

@@ -162,7 +162,7 @@ public class QLearningController extends Controller {
 
 	}
 
-	/* Computes the learning rate parameter alpha based on the number of times the state-action combination has been tested */
+	// /* Computes the learning rate parameter alpha based on the number of times the state-action combination has been tested */
 	public double alpha(int num_tested) {
 		/* Lower learning rate constants means that alpha will become small faster and therefore make the agent behavior converge to 
 		 * to a solution faster, but if the state space is not properly explored at that point the resulting behavior may be poor.

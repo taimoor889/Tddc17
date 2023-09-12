@@ -16,12 +16,19 @@ public class StateAndReward {
 
 	/* State discretization function for the full hover controller */
 	public static String getStateHover(double angle, double vx, double vy) {
-	
+		String statevxx = "vx:" + StateAndReward.discretize2(vx, 6, -3, 3);
+		String statevyy = "vy:" + StateAndReward.discretize2(vy, 6, -3, 4);
+		String stateA = StateAndReward.getStateAngle(angle, vx, vy);
+		
+		return statevxx + statevyy + stateA;
 	}
 
 	/* Reward function for the full hover controller */
 	public static double getRewardHover(double angle, double vx, double vy) {	
-		
+		double rew_angle = discretize(Math.abs(angle), 50, 0, 1);	
+		double rewardHover_vy = discretize(Math.abs(vy), 50, 0, 5);		
+		double reward = 100 - rew_angle - rewardHover_vy;
+		return reward;
 		
 		
 	}
